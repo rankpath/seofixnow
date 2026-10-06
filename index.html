@@ -51,11 +51,15 @@
         "name": "Adscraft Digital",
         "url": "https://adscraftdigital.com/",
         "logo": "https://adscraftdigital.com/seofixnow/logo-lockup.webp",
-        "email": "wikanda.lor@gmail.com",
+        "email": "vicky@adscraftdigital.com",
+        "sameAs": [
+          "https://www.facebook.com/adcraftdigital101",
+          "https://www.instagram.com/adscraft.digital"
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "sales",
-          "email": "wikanda.lor@gmail.com",
+          "email": "vicky@adscraftdigital.com",
           "url": "https://adscraftdigital.com/seofixnow/#contact"
         }
       },
@@ -229,8 +233,7 @@
     /* Contact */
     .contact-box { background: var(--lavender); border-radius: 28px; padding: 40px 24px; display: grid; gap: 36px; }
     @media (min-width: 900px) { .contact-box { grid-template-columns: 1fr 1fr; padding: 56px; align-items: center; } }
-    .contact-box h3 { margin: 0 0 .5rem; font-size: 1.35rem; }
-    .contact-box p { color: var(--muted); margin: 0 0 1.5rem; }
+    .contact-box p { color: var(--muted); margin: 0 0 1rem; }
     .channels { display: grid; gap: 12px; }
     .channel {
       display: flex; align-items: center; gap: 14px; padding: 16px 18px; border-radius: 16px; background: var(--white);
@@ -239,11 +242,20 @@
     .channel:hover { border-color: var(--purple); transform: translateY(-2px); }
     .ch-icon { width: 46px; height: 46px; border-radius: 12px; display: grid; place-items: center; flex-shrink: 0; color: var(--white); background: var(--navy); }
     .ch-icon svg { width: 24px; height: 24px; }
+    .ch-icon.line { background: #06C755; }
     .ch-icon.purple { background: var(--purple); }
     .ch-text { min-width: 0; }
     .ch-text strong { display: block; color: var(--navy); font-size: 16px; }
     .ch-text span { color: var(--muted); font-size: 15px; overflow-wrap: anywhere; }
     .channel .arrow { margin-left: auto; color: var(--purple); font-weight: 700; }
+    /* Small phones: give the addresses room so they don't break mid-word */
+    @media (max-width: 479px) {
+      .contact-box { padding: 32px 16px; }
+      .channel { padding: 14px; gap: 12px; }
+      .ch-icon { width: 42px; height: 42px; }
+      .ch-text span { font-size: 14px; }
+      .channel .arrow { display: none; }
+    }
 
     /* Footer */
     footer { padding: 56px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
@@ -370,31 +382,48 @@
         <div class="cta-box">
           <h2>Ready to Transform Your Online Presence?</h2>
           <p>Let's work together to get your website ranking higher in search results</p>
-          <a href="mailto:wikanda.lor@gmail.com?subject=Free%20SEO%20Consultation" class="btn btn-primary">Start Your Free Consultation</a>
+          <a href="mailto:vicky@adscraftdigital.com?subject=Free%20SEO%20Consultation" class="btn btn-primary">Start Your Free Consultation</a>
         </div>
       </div>
     </section>
 
     <!-- ---------- Contact ---------- -->
-    <section id="contact" class="section-soft">
+    <section id="contact">
       <div class="container">
         <div class="contact-box">
           <div>
             <span class="label">Contact · <span class="th" lang="th">ติดต่อเรา</span></span>
-            <h2>Website &amp; Content Service</h2>
-            <h3>Please Contact Us</h3>
-            <p>Ready to take your business to the next level? Get in touch with our team today. We're here to help you achieve your SEO and digital marketing goals.</p>
-            <a href="https://vicky.rank-path.com" target="_blank" rel="noopener" class="btn btn-primary">Visit Our Website</a>
+            <h2>Let's grow your business together</h2>
+            <p>Free consultation. No obligation. Tell us about your goals and we'll reply with a clear next step.</p>
+            <p class="th" lang="th">ปรึกษาฟรี ไม่มีข้อผูกมัด ทักมาคุยได้เลย</p>
           </div>
           <div class="channels">
-            <a class="channel" href="mailto:wikanda.lor@gmail.com">
-              <span class="ch-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
-              <span class="ch-text"><strong>Email</strong><span>wikanda.lor@gmail.com</span></span>
+            <a class="channel" href="https://line.me/R/ti/p/@adscraftdigital" target="_blank" rel="noopener">
+              <span class="ch-icon line" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.8c0 .3-.2 1 .9.5s5.9-3.5 8.1-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8Z"/></svg>
+              </span>
+              <span class="ch-text"><strong>LINE Official</strong><span lang="th">@adscraftdigital · แชทกับเราทาง LINE</span></span>
               <span class="arrow" aria-hidden="true">→</span>
             </a>
-            <a class="channel" href="https://vicky.rank-path.com" target="_blank" rel="noopener">
-              <span class="ch-icon purple" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
-              <span class="ch-text"><strong>Website</strong><span>https://vicky.rank-path.com</span></span>
+            <a class="channel" href="mailto:vicky@adscraftdigital.com">
+              <span class="ch-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <span class="ch-text"><strong>Email</strong><span>vicky@adscraftdigital.com</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="channel" href="https://www.facebook.com/adcraftdigital101" target="_blank" rel="noopener">
+              <span class="ch-icon purple" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8Z"/></svg>
+              </span>
+              <span class="ch-text"><strong>Facebook</strong><span>facebook.com/adcraftdigital101</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="channel" href="https://www.instagram.com/adscraft.digital" target="_blank" rel="noopener">
+              <span class="ch-icon purple" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </span>
+              <span class="ch-text"><strong>Instagram &amp; Threads</strong><span>@adscraft.digital</span></span>
               <span class="arrow" aria-hidden="true">→</span>
             </a>
           </div>
