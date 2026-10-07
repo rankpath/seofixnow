@@ -14,8 +14,8 @@
   <link rel="icon" type="image/png" href="/seofixnow/favicon.png">
   <link rel="apple-touch-icon" href="/seofixnow/favicon.png">
 
-  <!-- Hero cover is the largest element on screen: fetch it early -->
-  <link rel="preload" as="image" href="/seofixnow/cover.webp" imagesrcset="/seofixnow/cover-800.webp 800w, /seofixnow/cover.webp 1672w" imagesizes="(min-width: 1224px) 1096px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)">
+  <!-- Hero illustration is the largest image above the fold: fetch it early -->
+  <link rel="preload" as="image" href="/seofixnow/hero-visual.webp" imagesrcset="/seofixnow/hero-visual-480.webp 480w, /seofixnow/hero-visual.webp 678w" imagesizes="(min-width: 960px) 460px, min(100vw - 32px, 460px)">
 
   <!-- Brand fonts: Montserrat (English) + Prompt (Thai) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -180,15 +180,21 @@
     .label { display: inline-block; font-size: 15px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--purple); }
     .label .th { text-transform: none; letter-spacing: 0; font-weight: 500; }
 
-    /* ---------- Hero cover: full design image with a live (hidden) heading and a clickable CTA over the button ---------- */
-    .hero-cover { padding: 24px 0 40px; }
-    .cover-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); background: var(--lavender); line-height: 0; }
-    .cover-img { display: block; width: 100%; height: auto; }
-    .cover-cta { position: absolute; left: 5.4%; top: 64.5%; width: 20.3%; height: 8.5%; border-radius: 999px; }
-    .cover-cta::after { content: ""; position: absolute; inset: -14px -8px; }
-    .cover-cta:focus-visible { outline: 3px solid var(--navy); outline-offset: 4px; }
-    .cover-lead { max-width: 680px; margin: 1.5rem auto 0; text-align: center; color: var(--muted); font-size: 1.1rem; }
-    @media (min-width: 960px) { .hero-cover { padding: 40px 0 64px; } .cover-cta::after { inset: -6px -4px; } }
+    /* ---------- Hero: real text (H1 + lead) beside the illustration ---------- */
+    .hero { padding: 48px 0 72px; background: linear-gradient(128deg, #FFFFFF 0%, #F5F1FF 60%, #E9E2FF 100%); }
+    .hero-grid { display: grid; gap: 40px; align-items: center; }
+    @media (min-width: 960px) { .hero { padding: 72px 0 96px; } .hero-grid { grid-template-columns: 1.1fr .9fr; gap: 56px; } }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.25rem); font-weight: 800; line-height: 1.05; margin: .75rem 0 1rem; }
+    .hero h1 .accent { display: block; color: var(--purple); }
+    /* Thai line inside the H1: no letter-spacing, roomier line height */
+    .hero h1 .h1-th { display: block; margin-top: 1rem; font-family: var(--font-th); font-size: clamp(1.2rem, 2.4vw, 1.5rem); font-weight: 500; line-height: 1.6; letter-spacing: 0; color: var(--navy); }
+    .hero-lead { margin: 0 0 .5rem; color: var(--muted); font-size: 1.1rem; max-width: 560px; }
+    .hero-lead.th { line-height: 1.7; }
+    .hero-actions { margin: 1.75rem 0 2rem; }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+    .hero-tags li { padding: .4rem .9rem; border-radius: 999px; background: var(--white); border: 1px solid var(--line); color: var(--navy); font-size: 15px; font-weight: 600; }
+    .hero-visual { justify-self: center; width: 100%; max-width: 460px; border-radius: 24px; overflow: hidden; background: #F3F0FF; box-shadow: var(--shadow); }
+    .hero-visual img { width: 100%; height: auto; }
 
     /* ---------- Sections ---------- */
     section { padding: 88px 0; }
@@ -290,15 +296,29 @@
   </header>
 
   <main>
-    <!-- ---------- Hero cover ---------- -->
-    <section class="hero-cover">
-      <div class="container">
-        <h1 class="visually-hidden">SEOFixNow SEO services by Adscraft Digital: Fix your SEO. Get found now.</h1>
-        <div class="cover-wrap">
-          <img class="cover-img" src="/seofixnow/cover.webp" srcset="/seofixnow/cover-800.webp 800w, /seofixnow/cover.webp 1672w" sizes="(min-width: 1224px) 1096px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)" width="1672" height="941" decoding="async" fetchpriority="high" alt="SEOFixNow by Adscraft Digital. Fix your SEO. Get found now. แก้ SEO ให้ตรงจุด ให้ลูกค้าเจอคุณบน Google. Services: Technical SEO, Local SEO, Content, Link Building. Illustration of a Google search result and an SEO Fix Pack checklist: title and meta description, headings and content, schema markup, speed and mobile.">
-          <a class="cover-cta" href="#contact" aria-label="ปรึกษาฟรี: Book a free SEO consultation"></a>
+    <!-- ---------- Hero ---------- -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="label">SEOFixNow · SEO Services</span>
+          <h1>Fix your SEO. <span class="accent">Get found now.</span>
+            <span class="h1-th" lang="th">แก้ SEO ให้ตรงจุด ให้ลูกค้าเจอคุณบน Google</span>
+          </h1>
+          <p class="hero-lead">Professional SEO services to help your business rank higher on Google and attract more customers.</p>
+          <p class="hero-lead th" lang="th">บริการ SEO ครบทั้ง Technical SEO, Local SEO, คอนเทนต์ และลิงก์คุณภาพ เพื่อให้ลูกค้าค้นเจอธุรกิจของคุณบน Google ได้ง่ายขึ้น</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary th" lang="th">ปรึกษาฟรี <span aria-hidden="true">→</span></a>
+          </div>
+          <ul class="hero-tags" aria-label="Services">
+            <li>Technical SEO</li>
+            <li>Local SEO</li>
+            <li>Content</li>
+            <li>Link Building</li>
+          </ul>
         </div>
-        <p class="cover-lead">Professional SEO solutions to help your business rank higher and attract more customers</p>
+        <div class="hero-visual">
+          <img src="/seofixnow/hero-visual.webp" srcset="/seofixnow/hero-visual-480.webp 480w, /seofixnow/hero-visual.webp 678w" sizes="(min-width: 960px) 460px, min(100vw - 32px, 460px)" width="678" height="772" decoding="async" fetchpriority="high" alt="Illustration: a Google search for 'seo services' showing the SEOFixNow result, next to an SEO Fix Pack checklist: title and meta description, headings and content, schema markup, speed and mobile.">
+        </div>
       </div>
     </section>
 
